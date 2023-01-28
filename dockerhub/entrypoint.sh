@@ -20,5 +20,7 @@ fi
 echo "running entrypoint command(s)"
 
 response=$(sh -c " $INPUT_COMMAND")
+exit_code=$?
 
 echo "response=$response" >> $GITHUB_OUTPUT
+exit $exit_code
