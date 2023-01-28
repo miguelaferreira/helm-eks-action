@@ -23,5 +23,5 @@ response=$(sh -c " ${INPUT_COMMAND}")
 exit_code=$?
 echo "entrypoint command exit code was: ${exit_code}"
 
-echo "response=${response}" >> "${GITHUB_OUTPUT}"
+{ echo "response=<<EOF"; echo "${response}"; echo "EOF"; } >> "${GITHUB_OUTPUT}"
 exit ${exit_code}
